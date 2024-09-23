@@ -1,0 +1,96 @@
+<html>
+<head>
+<title>CSS簡介</title>
+<meta charset="UTF-8">
+<!--html註解-->
+<style>
+/* css註解*/
+/* CSS基本法
+    選擇器{
+    屬性:設定;
+    屬性:設定;
+    屬性:設定;
+     }   
+*/
+/* 選擇器的種類
+HTML_tag {   }
+#id{     }
+.class{    }
+*/ 
+/*顏色
+1. color name
+2.#色碼 #RRGGBB 00~FF
+3.rgb(r,g,b)0~255
+4.rgba(r,g,b,a) a:不透明度0~1
+5.hsl(色相,彩度,亮度)
+6.hsla(0~360,0~100,0~100,0~1)
+*/
+/*前景:文字顏色(color)
+ 背景:(background)
+    顏色(background-color)
+    圖像(background-image)
+
+*/
+ p {
+    margin: 0;
+ }
+ div{
+    background-color: yellow;
+    margin-top: 20px;
+    width: 300px;
+    height: 50px;
+   margin-bottom: 20px;
+ }
+ /*漸層 not a color, is a image
+ 1.線性漸層 linear-gradient()
+ 2.放射漸層
+ 3.圖圍漸層
+ */
+ #d1{
+    background-color: linear-gradient(125deg,red,blue,yellow);
+ }
+ #d2{
+    background-color: linear-gradient(90deg,red,orange) ;
+ }
+ span {
+   background-color: #123456;
+
+ }
+ #sp1 {
+    background-color: #000000;
+    width: 200px;
+    height: 100px;
+ }
+ #sp2 {
+    background-color: hsl(360,100,50,0.5);
+    width: 200px;
+    height: 100px;
+    display: inline-block;
+    
+ }
+ #sp3 {
+    display: block;
+    width: 200px;
+     height: 100px;
+ }
+ .cs1{
+    color: red;
+ }
+ .cs2{
+    background-color: green;
+ }
+</style>
+</head>
+<body>
+<p>P段落</p>
+<div class="cs1">區塊元素</div>
+<div id="d1"></div>
+<div id="d2"></div>
+<span id="sp1">行內元素</span>
+<span id="sp2" class="cs2">行內區塊元素</span>
+<span id="sp3" class="cs1 cs2">區塊元素</span>
+
+</body>
+
+
+</html>
