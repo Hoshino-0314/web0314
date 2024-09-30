@@ -1,0 +1,120 @@
+<html>
+    <head>
+<title>漸層</title>
+<meta charset="UTF-8">
+<style>
+div{
+    width: 500px;
+    height: 100px;
+}
+
+#d1{
+background: linear-gradient(90deg,gray 25%,blue 45%,white 30% ) ;
+}
+#d2{
+    background: linear-gradient(90deg,gray,blue,white);
+}
+#d3{
+    background: repeating-linear-gradient(45deg,red 20%,white 22%,red 24%);
+}
+
+#d4{
+    background: radial-gradient(rgba(204, 204, 4, 0.795),white 30%,rgb(29, 27, 27));
+    height: 300px;
+}
+#d5{
+    background: repeating-radial-gradient(circle,white,gray,white);
+}
+#d6{
+    background: conic-gradient(red,green,blue,red);
+    height: 500px;
+}
+#d7{
+    background: repeating-conic-gradient(blue 10%,white 15%,blue 20%);
+    height: 300px;
+}
+/*動畫*/
+
+@keyframes k1 {
+0%{background: linear-gradient(90deg,gray ,blue 50%,white  ) ;}
+12%{background: linear-gradient(90deg,gray ,blue 45%,white  ) ;}
+24%{background: linear-gradient(90deg,gray ,blue 60%,white  ) ;}
+50%{background: linear-gradient(90deg,gray ,blue 90%,white ) ;}
+70%{background: linear-gradient(90deg,gray ,blue 100%,white  ) ;}
+
+
+
+}
+@keyframes k3{
+0%{background: repeating-linear-gradient(45deg,red 20%,white 22%,red 34%);}
+20%{background: repeating-linear-gradient(45deg,red 30%,white 32%,red 44%);}
+45%{background: repeating-linear-gradient(45deg,red 40%,white 42%,red 54%);}
+65%{background: repeating-linear-gradient(45deg,red 50%,white 52%,red 64%);}
+85%{background: repeating-linear-gradient(45deg,red 60%,white 62%,red 74%);}
+}
+@keyframes k4{
+    0%{background: radial-gradient(rgba(204, 204, 4, 0.795),white 30%,rgb(29, 27, 27)); }
+    030%{background: radial-gradient(rgba(204, 204, 4, 0.795),white 50%,rgb(29, 27, 27));  }
+    60%{background: radial-gradient(rgba(204, 204, 4, 0.795),white 70%,rgb(29, 27, 27));  }
+    90%{background: radial-gradient(rgba(204, 204, 4, 0.795),white 100%,rgb(29, 27, 27));  }
+}
+@keyframes k5{
+    10%{ background: repeating-radial-gradient(circle,white,red,white); }
+    40%{ background: repeating-radial-gradient(circle,white,red,white); }
+    60%{ background: repeating-radial-gradient(circle,white,red,white); }
+    95%{ background: repeating-radial-gradient(circle,white,red,white); }
+}
+@keyframes k8{
+    0%{width: 500px;}
+    50%{width: 400px;}
+    100%{width: 100px;}
+}
+
+#a1{
+animation: k1 2s infinite linear;
+}
+#a3{
+    animation: k3 2s infinite linear;
+}
+#a4{
+ animation: k4 3.5s infinite linear;
+
+}b
+#a5{
+    animation: k5 1s infinite linear;
+}
+#a8{
+width: 100px;
+background-color: red;
+animation: k8 2s 1   linear;
+}
+#a9{
+    background-color: blue;
+}
+#a9:hover{
+    width: 100px;
+    transition: width 1s;
+}
+
+</style>
+
+    </head>
+    <body>
+<div id="d1"></div>
+<div id="d2"></div>
+<div id="d3"></div>
+<div id="d4"></div>
+<div id="d5"></div>
+<div id="d6"></div>
+<div id="d7"></div>
+<div id="d8"></div>
+<div id="d9"></div>
+
+<div id="a3"></div>
+<div id="a1"></div>
+<div id="a5"></div>
+<div id="a4"></div>
+<div id="a8"></div>
+<div id="a9"></div>
+    </body>
+</html>
