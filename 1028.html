@@ -1,0 +1,62 @@
+<html>
+<head>
+<title>表單控制項</title>
+<meta charset="UTF-8">
+<script>
+function get(id){
+  return document.getElementById(id);
+}
+function showRange(){
+    get("range_num").innerHTML=get("rg_font_size").value+"pt";
+    get("mytext").style.fontSize=get("rg_font_size").value+"pt";
+}
+function changeFontColor(){
+     get("mytext").style.color=get("color_font").value;
+}
+function check(){
+  if(get("cb_text").checked){
+    if(get("user_text").value.length>0){
+get("mytext").innerHTML=get("user_text").value;}
+ else{
+    alert("你沒有輸入文字");
+    get("cb_text").checked=false;
+ }
+  }
+  else{
+    get("mytext").innerHTML="預設文字";
+  }
+  }
+  function getRand() {
+/*get("rand_num").innerHTML=Math.floor(Math.random()*99)+1;*/
+//setTimeout()
+//setInterval()
+//clearInterval()
+  }
+
+</script>
+<style>
+  input{
+  display: block;
+  margin: 5px 0;
+  }
+#mytext{
+font-size: 20pt;
+color: black;
+}
+ 
+
+   
+</style>
+</head>
+<body>
+<div id="mytext">我的文字</div>
+<input type="text">
+<input type="checkbox" >套用<br>
+<input type="color" id="color_font" oninput="changeFontColor();"><br>
+<input type="range" id="rg_font_size" style="display: inline;" oninput="showRange();">
+<div id="rand_num">0</div>
+<span id="range_num">20</span>
+<button onclick="getRand();">亂數</bottom>
+
+</body>
+</html>
