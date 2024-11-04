@@ -25,9 +25,9 @@ return Math.floor(math.random()*(max-min+1))+min;
     }
 function rollingDice(){
 dice=getRandNum(1,6);
-get("dice").src=`.png`;
+get("dice").src=`pic/${dice}.png`;
 h=getRandNum(0,360);
-get("msg").style.color
+get("msg").style.color=`hsl(${h},80%,30%)`
 
   
 
