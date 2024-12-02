@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <title>1125上課筆記-鍵盤控制</title>
+<meta charset="UTF-8">
+<style>
+#worldmap {
+    background: url("pic/grass.jpg");
+    background-size: 200px 140px;
+    width: 800px;
+    height: 800px;
+position: relative;}
+@keyframes rolewalker{
+    0%{background-position-x:0px ;}
+    100%{background-position-x:-144px; ;}
+}
+#role {
+    background-image: url("sprite1.png");
+        width: 48px;
+        height: 72px;
+        position: absolute;
+        animation: rolewalker 1s steps(3) infinite;
+}
+</style>
+<script>
+    var pos={x:0,y:0};
+    var dir={"Arrowup":0,"ArrowDown":0,"ArrowLeft":0,"ArrowRight":0};
+function get(id) {
+    return document.getElementById(id);
+}
+function mykeydown() {
+    event.preventDefault();
+    var bgPY={"Arrowup":"-216px","ArrowDown":"0px","ArrowLeft":"-72px","ArrowRight":"-144px"};
+    get("role").style.backgroundPositionY=bgPY[event.key];
+    dir[event.key]=1;
+    /*if(event.key=="ArrowUp") {
+        get("role").style.backgroundPositionY="-216px";
+        pos.y-=5;
+    } else if(event.key=="ArrowDown"){
+        get("role").style.backgroundPositionY="0px";
+        pos.y+=5;
+    } 
+    
+    else if(event.key=="ArrowRight"){
+        get("role").style.backgroundPositionY="-144px";
+       pos.x-=5;
+    }
+    else if(event.key=="ArrowLeft"){
+        get("role").style.backgroundPositionY="-72PX";
+        pos.x+=5;
+    }
+   */
+
+}
+function mykeyup() {
+    event.preventDefault();
+    dir[event.key]=0;
+    get("role").style.animationPlayState="running";
+}
+function walk() {
+    var dir={"Arrowup":0,"ArrowDown":0,"ArrowLeft":-1,"ArrowRight":-1};
+    var dir={"Arrowup":-1,"ArrowDown":-1,"ArrowLeft":0,"ArrowRight":0};
+    if(dir["ArrowUp"]==1){
+        bgpos.y++;}
+        else if(dir["ArrowDown"]==1) {
+            bgpos.y--;
+        } else if(dir["ArrowLeft"]==1) {
+            bgpos.x++;
+        } else if(dir["ArrowRight"]==1) {
+            bgpos.x--;
+        }
+   /* pos.y+=dx[dir["now"]];
+    pos.x+=dx[dir["now"]];*/
+    get("role").style.left=pos.x+"px";
+    get("role").style.top=pos.y+"px";
+}
+function bgmove() {
+    if(dir["ArrowUp"]==1){
+        bgpos.y++;}
+        else if(dir["ArrowDown"]==1) {
+            bgpos.y--;
+        } else if(dir["ArrowLeft"]==1) {
+            bgpos.x++;
+        } else if(dir["ArrowRight"]==1) {
+            bgpos.x--;
+        }
+}
+function gameInit() {
+    pos={x:376,y:364};
+    bgPY={x:0,y:0};
+    var dir={"Arrowup":0,"ArrowDown":0,"ArrowLeft":0,"ArrowRight":0};
+    setInterval(walk,50);
+}
+
+
+</script>
+    </head>
+    <body onkeydown="mykeydown();" onkeyup="mykeyup();">
+        <div id="worldmap">
+            <div id="role"></div>
+        </div>
+
+    </body>
+</html>

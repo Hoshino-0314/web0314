@@ -5,7 +5,7 @@
 <style>
 #worldmap {
     background: url("pic/grass.jpg");
-    background-size: 100px 70px;
+    background-size: 200px 140px;
     width: 800px;
     height: 800px;
 position: relative;}
@@ -38,7 +38,7 @@ function mykeydown() {
     
     else if(event.key=="ArrowDown"){
         get("role").style.backgroundPositionY="-144px";
-       
+       pos.x-=5;
     }
     else if(event.key=="ArrowDown"){
         get("role").style.backgroundPositionY="-72PX";
