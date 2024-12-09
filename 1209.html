@@ -1,0 +1,99 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+<style>
+@keyframes bgmove {
+    0%{background-position-y: 0px;}
+    100%{background-position-y:216px ;}
+}
+#space {
+background: url("pic/bg_stars.jpg");
+
+}
+#ship {
+background: url("pic/ship.png");
+background-size: 40px 60px;
+width: 40px;
+height: 60px;
+position: absolute;
+left: 30px;
+top: 720px;
+}
+#ufo {
+background: url("pic/ufo.png");
+background-size: 60px 40px;
+width: 60px;
+height: 40px;
+position: absolute;
+}
+
+
+
+</style>
+<script>
+    function get(id) {
+        return document.getElementById(id);}
+
+        function gameInit(){
+ mykeys={"ArrowLeft":0,"ArrowLeft":0};
+ ship={pos:300};
+ setInterval(ship_move,1);
+        }
+
+function mykeydown(ev) {
+    ev.preventDefault();
+if(Object.keys(mykeys).includes(ev.key)) {
+    mykeys[ev.key]=1;
+}
+
+}
+
+    function mykeyup(ev) {
+        ev.preventDefault();
+    }
+    function ship_move() {
+        if(mykeys["ArrowLeft"] && ship.pos >0){
+            ship.pos--;
+        } else if(mykeys["ArrowLeft"] && ship.pos < 760){
+            ship.pos++;
+        } get("ship").style.left=ship.pos+"px";
+    }
+
+   function shoot () {
+    var u=document.createElement("div");
+    u.className="bullet";
+    u.pos={x:ship.pos+18,y:174};
+    u.style.left=u.pos.x+"px";
+    u.life=setInterval(bullet_move,10,u);
+    get("space").appendChild(u);
+   }
+function ufo_create() {
+    var u=document.createElement("div");
+    u.className="ufo";
+    u.pos={x:getRandNum(5,740),y:40};
+    u.style.left=u.pos.x+"px";
+    u.style.top=u.pos.y+"px";
+    u.life=setInterval(ufo_move,100,u);
+    get("space").appendChild(u);
+}
+   function bullet_move() {
+if(b.pos.y <= 0){
+    b.remove();
+} else {b.pos.y--;
+    b.style.top=b.pos.y+"px";
+}
+   }
+   
+</script>
+</head>
+<body onload="gameInit();" onkeydown="mykeydown(event);" onkeyup="mykeyup(event);">
+    <div id="space">
+        <div id="ship"></div>
+        <div class="ufo"></div>
+        <div id="bullet"></div>
+        
+
+    </div>
+</body>
+
+</html>
